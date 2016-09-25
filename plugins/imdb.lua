@@ -9,7 +9,7 @@ download_to_file(sticker,'sticker.webp')
     local file = '/tmp/sticker.webp'
     send_document(get_receiver(msg), file, ok_cb, false)
     end
-return text
+return reply_msg(msg.id,text,ok_cb,false)
 end
 return {
   patterns = {"^[/!](imdb) (.*)$"},
