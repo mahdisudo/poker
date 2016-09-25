@@ -1,6 +1,6 @@
 local function run(msg)
 if msg.text == "وضعیت" then
-	return reply_msg(msg.id,ربات انلاین است,ok_cb,false)
+	return "ربات انلاین است"
 end
 	
 if msg.text == "سلام" then
