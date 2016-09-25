@@ -15,6 +15,10 @@ if msg.text == "مهدی" then
 	return "با بابای من چیکار داری"
 end
 	
+if msg.text == "امیر" then
+	return "با بابای من چیکار داری"
+end
+	
 if msg.text == "بای" then
 	return "بای"
 end
