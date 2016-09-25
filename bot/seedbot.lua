@@ -231,7 +231,7 @@ function create_config( )
 	"supergroup",
 	"whitelist",
 	"msg_checks",
-        "activeuser" 	
+        "activeuser", 	
 	"delacc", 	
 	"imdb", 	
 	"arz", 	
@@ -270,7 +270,8 @@ function create_config( )
 	"Terminal", 	
 	"Fal", 	
 	"TextGif", 	
-	"Cpu"
+	"Cpu",
+        "plugins"
     },
     sudo_users = {155940345,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
