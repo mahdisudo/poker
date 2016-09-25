@@ -254,13 +254,29 @@ function create_config( )
 	"wiki", 	
 	"weather", 	
 	"write", 	
-	"lock_operator"
+	"lock_operator",
+        "Aparat", 	
+	"App", 	
+	"Bot_On_Off", 	
+	"Filter", 	
+	"Hash", 	
+	"Instagram", 	
+	"Keep", 	
+	"Music", 	
+	"Photo", 	
+	"price", 	
+	"RequestGroup", 	
+	"Azan", 	
+	"Terminal", 	
+	"Fal", 	
+	"TextGif", 	
+	"Cpu"
     },
     sudo_users = {155940345,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[
 	<code>
-    〽️ سازنده ربات : @Mehdi_Morphin
+    〽️ سازنده ربات : @Ir_poker
 〽️ ورژن ربات : v.2.
     </code>
 	]],
@@ -375,10 +391,10 @@ function create_config( )
 
 !filterlist
 لست کلمات فیلتر
-
-〽️ سازنده ربات : @Mehdi_Morphin
+<b>
+〽️ سازنده ربات : @Ir_poker
 〽️ ورژن ربات : v.2.
-</code>2]],
+</b></code>2]],
     help_text = [[
     <code>
 💎 دستورات سوپرگروه: ⬇️
@@ -490,10 +506,10 @@ function create_config( )
 
 !filterlist
 لست کلمات فیلتر
-
-〽️ سازنده ربات : @Mehdi_Morphin
+<b>
+〽️ سازنده ربات : @Ir_poker
 〽️ ورژن ربات : v.2.2
-</code>]],
+</b></code>]],
 	help_text_super =[[
     <code>
 💎 دستورات سوپرگروه: ⬇️
@@ -605,10 +621,10 @@ function create_config( )
 
 !filterlist
 لست کلمات فیلتر
-
-〽️ سازنده ربات : @Mehdi_Morphin
+<b>
+〽️ سازنده ربات : @Ir_poker
 〽️ ورژن ربات : v.2.
-</code>2]],
+</b></code>2]],
     help_text = [[
     <code>
 💎 دستورات سوپرگروه: ⬇️
@@ -720,10 +736,10 @@ function create_config( )
 
 !filterlist
 لست کلمات فیلتر
-
-〽️ سازنده ربات : @Mehdi_Morphin
+<b>
+〽️ سازنده ربات : @Ir_poker
 〽️ ورژن ربات : v.2.2
-</code>]],
+</b></code>]],
   }
   serialize_to_file(config, './data/config.lua')
   print('saved config into ./data/config.lua')
