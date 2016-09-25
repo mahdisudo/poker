@@ -27,13 +27,13 @@ local function list_all_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  ✔ enabled, ❌ disabled
-    local status = '🔴'
+    local status = '⚓️'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '🔵' 
+        status = '🚀' 
       end
       nact = nact+1
     end
@@ -52,23 +52,23 @@ local function list_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  ✔ enabled, ❌ disabled
-    local status = '🔴'
+    local status = '⚓️'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '🔵' 
+        status = '🚀' 
       end
       nact = nact+1
     end
-    if not only_enabled or status == '🔵' then
+    if not only_enabled or status == '🚀' then
       -- get the name
       v = string.match (v, "(.*)%.lua")
      -- text = text..v..'  '..status..'\n'
     end
   end
-  local text = text..'\nPlugins Reloaded !\n\n'..nact..' plugins enabled\n'..nsum..' plugins installed\n\n@Ir_poker'
+  local text = text..'\n🚀Plugins Reloaded !\n\n'..nact..' 🚀plugins enabled\n'..nsum..' 🚀plugins installed\n\n@Ir_poker'
   return text
 end
 
@@ -130,25 +130,25 @@ local function disable_plugin_on_chat(receiver, plugin)
   _config.disabled_plugin_on_chat[receiver][plugin] = true
 
   save_config()
-  return ' '..plugin..' disabled on this chat'
+  return ' '..plugin..' disabled on this chat🚀'
 end
 
 local function reenable_plugin_on_chat(receiver, plugin)
   if not _config.disabled_plugin_on_chat then
-    return 'There aren\'t any disabled plugins'
+    return 'There aren\'t any disabled plugins🚀'
   end
 
   if not _config.disabled_plugin_on_chat[receiver] then
-    return 'There aren\'t any disabled plugins for this chat'
+    return 'There aren\'t any disabled plugins for this chat🚀'
   end
 
   if not _config.disabled_plugin_on_chat[receiver][plugin] then
-    return 'This plugin is not disabled'
+    return 'This plugin is not disabled🚀'
   end
 
   _config.disabled_plugin_on_chat[receiver][plugin] = false
   save_config()
-  return ' '..plugin..' is enabled again'
+  return ' '..plugin..' is enabled again🚀'
 end
 
 local function run(msg, matches)
@@ -162,7 +162,7 @@ local function run(msg, matches)
       if is_momod(msg) then
     local receiver = get_receiver(msg)
     local plugin = matches[2]
-    print("enable "..plugin..' on this chat')
+    print("enable "..plugin..' on this chat🚀')
     return reenable_plugin_on_chat(receiver, plugin)
   end
     end
@@ -180,14 +180,14 @@ local function run(msg, matches)
       if is_momod(msg) then
     local plugin = matches[2]
     local receiver = get_receiver(msg)
-    print("disable "..plugin..' on this chat')
+    print("disable "..plugin..' on this chat🚀')
     return disable_plugin_on_chat(receiver, plugin)
   end
     end
   -- Disable a plugin
   if matches[1] == '-' and is_sudo(msg) then --after changed to moderator mode, set only sudo
     if matches[2] == 'plug' then
-    	return 'This plugin can\'t be disabled'
+    	return 'This plugin can\'t be disabled🚀'
     end
     print("disable: "..matches[2])
     return disable_plugin(matches[2])
