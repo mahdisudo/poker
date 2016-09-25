@@ -1,25 +1,20 @@
 local function run(msg)
 if msg.text == "وضعیت" then
-	return "ربات روشن میباشد"
+	return reply_msg(msg.id,ربات انلاین است,ok_cb,false)
 end
+	
 if msg.text == "سلام" then
 	return "سلام"
 end
-if msg.text == "motodl" then
-	return "جونم"
-end
+	
 if msg.text == "خوبی" then
 	return "ممنون تو خوبی؟"
 end
-if msg.text == "؟" then
-	return "بله"
-end
+
 if msg.text == "مهدی" then
 	return "با بابای من چیکار داری"
 end
-if msg.text == "@pic5all" then
-	return "با بابای من چیکار داری"
-end
+	
 if msg.text == "بای" then
 	return "بای"
 end
@@ -34,11 +29,8 @@ return {
 	patterns = {
 	"^وضعیت",
 	"^سلام",
-	"^motodl$",
 	"^خوبی",
-	"^؟",
 	"^مهدی",
-	"^@pic5all$",
 	"^بای",
 	"^مرسی",
 		
