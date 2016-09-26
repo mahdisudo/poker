@@ -271,7 +271,12 @@ function create_config( )
 	"Fal", 	
 	"TextGif", 	
 	"Cpu",
-        "plugins"
+        "plugins",
+	"html",
+        "Mean",
+        "welcome",
+        "gitpull",
+        "filter"
     },
     sudo_users = {155940345,0,tonumber(our_id)},--Sudo users
     moderation = {data = 'data/moderation.json'},
