@@ -1,3 +1,4 @@
+
 do
 function run_bash(str)
     local cmd = io.popen(str)
@@ -63,14 +64,13 @@ function run(msg, matches)
 	local code = http.request('http://api.aladhan.com/timings/'..dumptime..'?latitude='..lat..'&longitude='..lng..'&timezonestring=Asia/Tehran&method=7')
 	local jdat = json:decode(code)
 	local data = jdat.data.timings
-	local text = 'شهر: '..city
-	  text = text..'\nاذان صبح: '..data.Fajr
-	  text = text..'\nطلوع آفتاب: '..data.Sunrise
-	  text = text..'\nاذان ظهر: '..data.Dhuhr
-	  text = text..'\nغروب آفتاب: '..data.Sunset
-	  text = text..'\nاذان مغرب: '..data.Maghrib
-	  text = text..'\nعشاء : '..data.Isha
-	  text = text..''
+	local text = '<code>⛪️شهر: <code>'..city
+	  text = text..'\n<code>🕌اذان صبح: </code>'..data.Fajr
+	  text = text..'\n<code>🕌طلوع آفتاب: </code>'..data.Sunrise
+	  text = text..'\n<code><🕌اذان ظهر: </code>'..data.Dhuhr
+	  text = text..'\n<code>🕌غروب آفتاب: </code>'..data.Sunset
+	  text = text..'\n<code>🕌اذان مغرب: </code>'..data.Maghrib
+	  text = text..'\n<code>🕌عشاء : </code>'..data.Isha
 	if string.match(text, '0') then text = string.gsub(text, '0', '۰') end
 	if string.match(text, '1') then text = string.gsub(text, '1', '۱') end
 	if string.match(text, '2') then text = string.gsub(text, '2', '۲') end
@@ -85,13 +85,9 @@ function run(msg, matches)
 end
 
 return {
-  patterns = {
-      "^اوقات شرعی (.*)$",
-      "^[!/#]([Pp]raytime) (.*)$",
-      "^([Pp]raytime) (.*)$"
-      }, 
+  patterns = {"^[#/!][Aa]zan (.*)$",
+	"^[#/!](azan)$"}, 
   run = run 
 }
 
 end
-
